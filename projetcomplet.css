@@ -1,0 +1,860 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+ }
+ 
+ body{
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ 
+#sect{
+     min-height: 100VH;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: rgb(255, 255, 255);
+ }
+ 
+ .container{
+     width: 90%;
+     max-width: 1000PX ; /* l3ard la max li n9dr nhto genre mn9dach ndir ktr mn hda l 3ard */
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .left{
+     width: 50%;
+     height: 600PX;
+     background: url("fond2.jpg") no-repeat  center;
+     background: cover;
+     border-radius: 8PX;
+     animation: fade 3s ease ;
+ }
+ 
+ .right{
+     width: 50%;
+     min-height: 400px;
+     background-color: cadetblue;
+     display: flex;
+     align-items:center ;
+     justify-content: center;
+     padding: 30PX;
+     border-radius: 8px;
+     color: aliceblue;
+     margin-left: -150PX ; /* drtha -150 bch tdna twli fou9 hddk tae photo lah lah */
+     animation: fadeEE 2s ease ;
+ }
+ 
+ .right h1 {
+     font-size: 40PX;
+     font-weight: lighter;
+     text-align: center;
+     
+ }
+ 
+ .right p {
+     margin: 20PX 0;
+     font-weight: 500;
+     line-height: 25PX; 
+     
+ }
+ 
+ .right a {
+     text-decoration: none;
+     text-transform: uppercase; 
+     background-color: aliceblue;
+     color: black;
+     padding: 20PX 30PX;
+     display: inline-block;
+     letter-spacing: 2PX;
+     margin-left: 150PX;
+     margin-top: 25PX;
+ }
+ 
+ @keyframes fade {
+     0%{
+         opacity: 0;
+         transform: translateY(50PX); /**/
+     }
+ 
+     100%{
+         opacity: 1;
+         transform: translateY(0PX); /* twli ll mwj3ha lwl*/
+     }
+ }
+ 
+ @keyframes fadeEE {
+     0%{
+         opacity: 0;
+         transform: translateX(-50PX);
+     }
+ 
+     100%{
+         opacity: 1;
+         transform: translateX(0PX);
+     }
+ }
+ 
+
+ /*the courses page*/
+ #courses{
+  padding-left:6px;
+  padding-right:6px;
+  padding-bottom:20px;
+ }
+
+.courses{
+    background-color: var(--secondarycolor);
+    margin: 0;
+    padding-top: 1rem;
+}
+.courses.text-part h1{
+    font-size:2.8rem;
+    color:var(--white);
+    text-align: right;
+    margin:2rem 0;
+    opacity: 80%;
+}
+.courses.text-part .overlay-text{
+    position:absolute;
+    top:-20px;
+    left:0;
+    z-index:10;
+    display:inline-block;
+}
+.courses .text-part .overlay-text h2 {
+    font-size: 6rem;
+    opacity: 2%;
+    color: var(--darkishwhite);
+  }
+  .courses .main-container {
+    margin-top: 2rem;
+    z-index:900;  
+    display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(17.1875rem, 1fr)); /*definit la disposition des colonnes ... creates as many columns as will fit in the available space.
+     /* minmax(17.1875rem, 1fr) sets the minimum width of each column to 17.1875rem and allows them to grow up to one fraction of the remaining space. */
+    gap: 2rem;
+  }
+ 
+  .courses .main-container .card {
+    position:relative;
+    z-index: inherit;  /*inherit the z-index value from their parent element here the z-index is 900*/
+    background-color:rgb(227, 223, 255);
+    border-radius: 0.625rem;
+    box-shadow: hsla(0deg, 0%, 0%, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    cursor:Pointer;
+    
+  }
+  .courses .main-container .card_image {
+    width: 100%;
+  }
+  .courses .main-container .card_image img {
+    width: 100%;
+    aspect-ratio:1/1;/*relation entre width et height shape of the image=square*/
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 100%;
+
+  }
+  .courses .main-container::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+ 
+  .courses .main-container .card_image img:hover{
+    opacity:80%;
+  
+  }
+  .courses .main-container .card_info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .courses .main-container .card_info ion-icon {
+    font-size: 1.25rem;
+  }
+  .courses .main-container .card_info_rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .courses .main-container .card_info_rating .rating_box {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 0.5rem;/* defines the gap size as 0.5rem... targets older versions of mozilla firefox */
+         column-gap: 0.5rem;/*modern browsers*/
+    background-color: rgb(115, 141, 176);
+    border-radius: 10px;
+  }
+  .courses .main-container .card_info_rating .rating_box ion-icon {
+    color: greenyellow;
+  }
+  .courses .main-container .card_info_rating .rating_box span {
+    font-size: 1rem;
+    font-weight: 800;
+    color:dark;
+  }
+  .courses .main-container .card_info_rating .rating_text p {
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color:black;
+    opacity:60%;
+  }
+  .courses .main-container .card_info_text a {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 350ms ease-in-out;
+  }
+  .courses .main-container .card_info_text a:hover {
+    color: rgb(64, 64, 107);
+  }
+  .courses .main-container .card_info_status {
+    margin: 0.5rem 0;
+     padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    align-items: center;
+  }
+  .courses .main-container .card_info_text ion-icon {
+    color: var(--black);
+  }
+  .courses .main-container .card_info_status .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    background-color: var(--black);
+  }
+  .courses .main-container .card_info_status.info p {
+    margin: 0;
+    padding: 0;
+  }
+  .courses .main-container .card_info_price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .courses .main-container .card_info_price p {
+    margin: 0;
+    padding: 0;
+  }
+  .courses .main-container .card_info_price .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    -moz-column-gap: 0.4rem;
+         column-gap: 0.4rem;
+  }
+  .courses .main-container .card_info_price .price h1 {
+    font-size: 2rem;
+    color:dark;
+  }
+  .courses .main-container .card_info_price .price p {
+    text-decoration: line-through;
+    font-size: 1.3rem;
+    color:rgb(27, 27, 37);
+  }
+  .courses .main-container .card_info_price .btn-learnmore {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius:0.6rem;
+    margin-right: 20px;
+    transition: all 35ms ease-in;
+  }
+  .courses .main-container .card_info_price .btn-learnmore:hover {
+    background-color:rgb(161, 161, 214);
+  }
+ /*the services section*/
+
+  /* Styles for the title element (likely a page title) */
+  .title {
+    color: #777; /* Sets the text color to a dark gray */
+    font-family: 'Raleway'; /* Uses the Raleway font (you'll need to include this font in your project) */
+    font-size: 1.5em; /* Sets the font size to 1.5 times the default */
+    width: 1200px; /* Sets the width of the title element */
+    margin: 10px auto; /* Centers the title horizontally with 'auto' margins */
+    text-align: center; /* Aligns the title text to the center */
+  }
+  
+  /* Styles for the services container (likely for cards) */
+  .services {
+    display: flex; /* Arranges items in a row using flexbox */
+    justify-content: center; /* Centers content horizontally within the container */
+    align-items: center; /* Centers content vertically within the container */
+    min-height: 500px; /* Sets a minimum height for the container */
+  }
+  
+  /* Styles for individual cards */
+  .cardd {
+    height: 350px; /* Sets the height of the card */
+    width: 550px; /* Sets the width of the card */
+    padding: 20px 35px; /* Adds padding around the content inside the card */
+    border-radius: 10px; /* Creates rounded corners for the card */
+    background: #dff9fb; /* Sets the background color of the card */
+    margin: 10px; /* Adds margin between cards */
+    overflow: hidden; /* Prevents content overflowing outside the card */
+    position: relative; /* Enables positioning elements relative to the card itself (for hover effects) */
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1); /* Defines a smooth transition effect for various properties on hover (0.3s duration, cubic-bezier timing function) */
+  }
+  
+  /* Styles for icon element within card (likely displayed at top) */
+  .cardd .icon {
+    font-size: 64px; /* Sets the font size of the icon */
+    display: block; /* Makes the icon element display as a block-level element */
+    text-align: center; /* Centers the icon text horizontally */
+    color: #7ed6df; /* Sets the color of the icon */
+    margin-top: 18px; /* Adds margin above the icon */
+  }
+  
+  /* Styles for heading element within card */
+  .cardd h1 {
+    font-family: 'Raleway'; /* Uses the Raleway font for the heading (same as title) */
+    text-align: center; /* Centers the heading text horizontally */
+    color: #3c63d0; /* Sets the color of the heading */
+    font-size: 22px; /* Sets the font size of the heading */
+  }
+  
+  /* Styles for button element within card */
+  .cardd .button {
+    background: #22a6b3; /* Sets the background color of the button */
+    color: #c7ecee; /* Sets the text color of the button */
+    border: none; /* Removes the border from the button */
+    border-radius: 5px; /* Creates rounded corners for the button */
+    width: 120px; /* Sets the width of the button */
+    padding: 15px; /* Adds padding to the button */
+    margin-top: 25px; /* Adds margin above the button */
+    display: inline-block; /* Makes the button display as an inline-block element */
+    font-family: 'Raleway'; /* Uses the Raleway font for the button (same as title and heading) */
+    font-size: 16px; /* Sets the font size of the button text */
+    text-align: center; /* Centers the button text horizontally */
+  }
+  
+/* Styles for paragraph elements within card content */
+.cardd .content p{
+    font-size: 14px; /* Sets the font size of paragraphs to 14px */
+    color: #535c68; /* Sets the text color of paragraphs to a dark gray */
+    line-height: 20px; /* Sets the line height for paragraphs (space between lines) */
+    font-family:arial; /* Uses the arial font for paragraphs (you'll need to include this font in your project) */
+  }
+  
+  /* Styles applied to card on hover */
+  .cardd:hover {
+    color: #fff; /* Changes text color to white on hover */
+    border: none; /* Removes any border on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow on hover with blur, spread, size, and opacity */
+    animation: rotate 0.7s ease-in-out both; /* Applies the 'rotate' animation on hover (0.7s duration, ease-in-out timing function, plays twice) */
+  }
+  
+  /* Styles for pseudo-elements (circles) added on hover */
+  .cardd:before,
+  .cardd:after {
+    content: ''; /* Hides the content of the pseudo-elements */
+    background: #049caa; /* Sets the background color of the pseudo-elements to match button color */
+    width: 180px; /* Sets the width of the pseudo-elements */
+    height: 180px; /* Sets the height of the pseudo-elements */
+    border-radius: 50%; /* Creates rounded corners for the pseudo-elements (circles) */
+    opacity: 0; /* Sets initial opacity to 0 (invisible) */
+    position: absolute; /* Positions the elements relative to the card */
+    right: 0; /* Positions them at the right edge of the card */
+    bottom: -50px; /* Positions them 50px below the bottom of the card */
+    z-index: -1; /* Positions them behind the card content */
+    transform: translate(100%, -25%) translate3d(0, 0, 0); /* Initial transform state (moved off-screen to the right) */
+    transition: all 0.15s cubic-bezier(0.02, 0.01, 0.47, 1); /* Defines a smooth transition effect for all properties (0.15s duration, cubic-bezier timing function) */
+  }
+  
+  /* Styles applied to pseudo-elements on hover */
+  .cardd:hover:before,
+  .cardd:hover:after {
+    opacity: 0.15; /* Increases opacity to 0.15 (slightly visible) on hover */
+  }
+  
+  .cardd:hover:before {
+    transform: translate3d(50%, 0, 0) scale(0.9); /* Animates the first circle on hover: moves it horizontally, and scales it down slightly */
+  }
+  
+  .cardd:hover:after {
+    transform: translate3d(50%, 0, 0) scale(1.1); /* Animates the second circle on hover: moves it horizontally, and scales it up slightly */
+  }
+  
+  /* Animation definition */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(3deg);
+    }
+    50% {
+      transform: rotate(-3deg);
+    }
+    75% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  /* the success section*/
+
+
+.counter-up{
+    background: url(" blue.jpg") no-repeat;
+    background-size: cover ;
+    background-attachment: fixed; /* mfhthach*/
+    min-height: 50vh ;
+    display: flex;
+    align-items: center;
+    padding: 0 50PX;
+}
+
+.counter-up ::before{ /* 9bl m cree item                 */
+    position: relative;
+    content: ""; /* hdi genre l content mahch ykn dkhlha hta haja */
+}
+
+.counter-up .content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .box{
+    width: calc(25% - 30PX); /* hdi mfhmthach*/
+    border: 1PX Dashed white; /*Dashed : hdi li drna lkhtout mt9t3in*/
+    border-radius: 5PX;
+    padding:20PX ;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* msafa btsawi twji3 masaf bin 3ansf btaswi */
+    color: white;
+    flex-direction: column; /* la direction tji lea hsb les coloun*/ 
+
+}
+
+.content .box .icon {
+    font-size:48PX ;
+    color: #e6e6e6;
+}
+
+.content .box .counter {
+    font-size:48PX ;
+    color: #f2f2f2;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.content .box .text{
+    color: #ccc;
+    font-weight: 400;
+}
+/* the faq question*/
+#faq{
+    background:#F5f5f5;
+    padding: 84px 0px 144px 130px;
+    display:flex;
+  flex-direction:column;
+}
+.faq-heading{
+    display: flex;
+    flex-direction:column;
+    padding-left: 46px;
+    margin-bottom: 24px;
+}
+.faq-heading h3{
+    font-weight: 700;
+    font-size: 45.25px;
+     line-height: 40px;
+    color: #3B2A82;
+    text-transform: uppercase;
+}
+.faq-heading p{
+    font-weight: 400;
+    font-size: 13.175px;
+    line-height: 20px;
+    color: #7A719B;
+    max-width: 500px;
+}
+.faq-content{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    width: 100%;
+    align-items:flex-start; /*image devant le faq au debut */
+}
+.faq-box{
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #FFFFFF;
+    box-shadow: 14px 14px 60px rgba(59, 42, 130, 0.06);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom:15px;
+}
+.faq-box:last-child{
+    margin-bottom: 0px;
+}
+.faq-box-question{
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.faq-box-question h4{
+    font-weight: 700;
+    font-size: 22.625px;
+    line-height: 32px;
+    color: #3B2A82;
+}
+.faq-box-answer{
+    max-height: 0px;
+    overflow: hidden;
+    transition: all ease-in-out 0.5s;
+}
+.faq-box-answer p{
+    font-weight: 400;
+    font-size: 13.175px;
+    line-height: 20px;
+    color: #7A719B;
+    padding-top: 20px;
+}
+.faq-img{
+    width: 100%;
+    overflow: hidden;
+  padding-right:20px;
+    border-radius: 27px 0px 0px 23px;
+    display: flex;
+    box-shadow: 14px 14px 60px rgba(59, 42, 130, 0.06);
+}
+.faq-box-container{
+    margin-right: 40px;
+}
+.faq-img img{
+    width: 100%;
+    object-fit: contain;
+    object-position: right;
+}
+.faq-box-icon{
+    display: block;
+    position: relative;
+    height: 3px;
+    transition: 0.2s ease-out;
+    width: 25px;
+    margin-left:auto;
+}
+.faq-box-icon::before,
+.faq-box-icon::after{
+    background: #2d04fd;
+    content: '';
+    position: absolute;
+    height: 100%;
+    transition: all ease-out 0.4s;
+    width: 100%;
+    border-radius: 4px;
+}
+.faq-box-icon::before,
+    .faq-box-icon::after{
+        background: #382B7D;
+        content: '';
+        position: absolute;
+        height: 100%;
+        transition: all ease-out 0.2s;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .faq-box-icon::before{
+        top: 0px;
+    }
+    .faq-box-icon::after{
+        transform: rotate(90deg);
+        top: 0px;
+    }
+    .faq-box-question.active h4{
+        color: #304c8d;
+    }
+    .faq-box-question.active .faq-box-icon::after{
+        transform: rotate(0deg);
+    }
+    
+/* the brands section*/
+
+@keyframes scroll {
+    1%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX( calc(-80PX * 2) );
+    }
+}
+
+.slider{
+    background: url("clouds-1282314_1280.jpg") no-repeat;
+    background-size: cover ;
+    background-attachment: fixed; /* mfhthach*/
+    align-items: center;
+    justify-content: center;
+    height: 300PX;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+}
+
+.slider h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20PX;
+    font-size: 60PX;
+     color: #aeefff;
+    text-shadow: 0PX 0PX 8PX white ,
+    0PX 0PX 12PX rgb(34, 34, 34) ,
+    0PX 0PX 16PX rgb(255, 255, 255),
+    0PX 0PX 20PX rgb(192, 192, 192) ;
+}
+
+.slider .slide-track{
+    animation: scroll 2.5s linear infinite; /* linear hdi ima eases genre tthrk  تتحكم في تسارع و تباطؤ التحريك. infinte M3ntha tthrl ila ma la nhaya  */
+    display: flex;
+    width: calc(250PX * 14);
+}
+
+.slider .slide {
+    height:auto ;
+    width: auto;
+    
+}
+ 
+
+.slider .slide IMG {
+    width: auto;
+    padding-left: 6PX;
+}
+
+hr{
+    width: 70%;
+    height: 3px;
+    border: none;
+    background-color:#b3b3b3 ;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    BOX-shadow: 0PX 0PX 8PX rgb(97, 97, 97) ,
+    0PX 0PX 12PX rgb(66, 66, 66) ,
+    0PX 0PX 16PX white,
+    0PX 0PX 20PX rgb(255, 255, 255) ;
+}
+/* the contact and the footer section*/
+
+.contact_us{
+    margin: auto; /*autoumatique et c bon */
+    width: 90%;
+    height: 90%;
+    display: flex;
+    /*flex-wrap: wrap; */
+    padding: 2PX;
+    margin-left:-10px;
+    border-radius: 10PX;
+    background-color: white;
+    box-shadow: 0PX 0PX 10PX 0PX  #666;
+}
+
+.contact-map{
+    width: 100%;
+    height:auto ;
+    flex: 50% ; /* hia drlna la longeure irtifa3 ela les item taek*/
+
+}
+
+.contact-form{
+    width: 100%;
+    height:auto;
+    padding: 30PX;
+    flex: 50% ; /* hia drlna la langeur irtifa3 ela les item taek*/
+    text-align: center;
+}
+
+.contact-form h1 {
+    margin-bottom:30PX ;
+}
+
+.contact-form-txt{
+    width: 100%;
+    height: 40PX;
+    color:black;
+    border: 1PX SOLID rgb(226, 226, 226);
+    border-radius: 50PX;
+    outline: none;
+    margin-bottom: 20PX;
+    padding: 15PX;
+    box-shadow: inset  2PX 2PX 5PX #BABECC ,
+       inset -5PX -5PX 10PX #ffffff73;
+}
+::placeholder {
+    color: #aaa;
+}
+
+.contact-form-txtarea{
+    width: 100%;
+    height: 100PX;
+    color:rgb(0, 0, 0);
+    border: 1PX SOLID rgb(226, 226, 226);
+    border-radius: 20PX;
+    outline: none;
+    margin-bottom: 20PX;
+    padding: 15PX;
+    box-shadow: inset  2PX 2PX 5PX #BABECC ,
+       inset -5PX -5PX 10PX #ffffff73;
+}
+
+.contact-form-btn{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 50PX;
+    background-color: #2d8ae2;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10PX 0;
+    cursor: pointer;
+    font-size:18PX ;
+}
+#foot{
+     margin-left:-150px;
+     margin-bottom:-150px;
+}
+
+
+footer{
+    margin-top:20px;
+    background-color: rgb(55, 177, 214);
+    width: 100%;
+} 
+
+.footercontainer{
+   width: 100%;
+   padding: 70PX 30PX 20PX  ;
+   
+}
+
+.socalicon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socalicon a {
+    text-decoration: none;
+    padding: 10PX;
+    margin: 10PX;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.socalicon a  i {
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.socalicon a:hover{
+    background-color: rgb(55, 177, 214);
+    transition: 0.5s;
+}
+ 
+.socalicon a:hover  i{
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+.footerNav{
+    margin: 30PX 0;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    
+}
+
+.footerNav ul li a {
+    color: black;
+    margin: 20PX ;
+    text-decoration: none ;
+    font-size: 1.3EM;
+    opacity: 0.7 ;
+    transition: 0.5s;
+    padding: 0PX 2PX;
+    padding: 0PX 22PX;
+}
+
+.footerNav ul li a :hover{
+    opacity: 1;
+}
+
+.footerbottom {
+    background-color:rgb(9, 40, 49);
+    padding: 20PX;
+    text-align: center;
+}
+
+.footerbottom p {
+    color: white;
+}
+
+.designer{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1PX; /* drnla ecpace bi klamat*/
+    font-weight: 400;
+    margin: 0PX 5PX;
+}
+
+@media (max-width: 700PX)
+{
+    .footerNav ul {
+        flex-direction: column ; /* hdi mfhmthach*/
+    }
+
+    .footerNav ul li{
+        width: 100%;
+        text-align: center;
+        margin: 10PX;
+    }
+}

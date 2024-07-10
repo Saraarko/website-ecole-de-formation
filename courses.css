@@ -1,0 +1,190 @@
+#courses{
+    margin:0;
+}
+.courses{
+    background-color: var(--secondarycolor);
+    margin: 0;
+    padding-top: 1rem;
+}
+.courses.text-part h1{
+    font-size:2.8rem;
+    color:var(--white);
+    text-align: right;
+    margin:2rem 0;
+    opacity: 80%;
+}
+.courses.text-part .overlay-text{
+    position:absolute;
+    top:-20px;
+    left:0;
+    z-index:10;
+    display:inline-block;
+}
+.courses .text-part .overlay-text h2 {
+    font-size: 6rem;
+    opacity: 2%;
+    color: var(--darkishwhite);
+  }
+  .courses .main-container {
+    margin-top: 2rem;
+    z-index:900;  
+    display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(17.1875rem, 1fr)); /*definit la disposition des colonnes ... creates as many columns as will fit in the available space.
+     /* minmax(17.1875rem, 1fr) sets the minimum width of each column to 17.1875rem and allows them to grow up to one fraction of the remaining space. */
+    gap: 2rem;
+  }
+ 
+  .courses .main-container .card {
+    position:relative;
+    z-index: inherit;  /*inherit the z-index value from their parent element here the z-index is 900*/
+    background-color:rgb(227, 223, 255);
+    border-radius: 0.625rem;
+    box-shadow: hsla(0deg, 0%, 0%, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    cursor:Pointer;
+    
+  }
+  .courses .main-container .card_image {
+    width: 100%;
+  }
+  .courses .main-container .card_image img {
+    width: 100%;
+    aspect-ratio:1/1;/*relation entre width et height shape of the image=square*/
+    -o-object-fit: cover;
+       object-fit: cover;
+    opacity: 100%;
+
+  }
+  .courses .main-container::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+ 
+  .courses .main-container .card_image img:hover{
+    opacity:80%;
+  
+  }
+  .courses .main-container .card_info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .courses .main-container .card_info ion-icon {
+    font-size: 1.25rem;
+  }
+  .courses .main-container .card_info_rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .courses .main-container .card_info_rating .rating_box {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 0.5rem;/* defines the gap size as 0.5rem... targets older versions of mozilla firefox */
+         column-gap: 0.5rem;/*modern browsers*/
+    background-color: rgb(115, 141, 176);
+    border-radius: 10px;
+  }
+  .courses .main-container .card_info_rating .rating_box ion-icon {
+    color: greenyellow;
+  }
+  .courses .main-container .card_info_rating .rating_box span {
+    font-size: 1rem;
+    font-weight: 800;
+    color:dark;
+  }
+  .courses .main-container .card_info_rating .rating_text p {
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color:black;
+    opacity:60%;
+  }
+  .courses .main-container .card_info_text a {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 350ms ease-in-out;
+  }
+  .courses .main-container .card_info_text a:hover {
+    color: rgb(64, 64, 107);
+  }
+  .courses .main-container .card_info_status {
+    margin: 0.5rem 0;
+     padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    align-items: center;
+  }
+  .courses .main-container .card_info_text ion-icon {
+    color: var(--black);
+  }
+  .courses .main-container .card_info_status .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 0.5rem;
+         column-gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    background-color: var(--black);
+  }
+  .courses .main-container .card_info_status.info p {
+    margin: 0;
+    padding: 0;
+  }
+  .courses .main-container .card_info_price {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .courses .main-container .card_info_price p {
+    margin: 0;
+    padding: 0;
+  }
+  .courses .main-container .card_info_price .price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    -moz-column-gap: 0.4rem;
+         column-gap: 0.4rem;
+  }
+  .courses .main-container .card_info_price .price h1 {
+    font-size: 2rem;
+    color:dark;
+  }
+  .courses .main-container .card_info_price .price p {
+    text-decoration: line-through;
+    font-size: 1.3rem;
+    color:rgb(27, 27, 37);
+  }
+  .courses .main-container .card_info_price .btn-learnmore {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius:1rem;
+    margin-right: 50px;
+    transition: all 35ms ease-in;
+  }
+  .courses .main-container .card_info_price .btn-learnmore:hover {
+    background-color:rgb(161, 161, 214);
+  }
+   
